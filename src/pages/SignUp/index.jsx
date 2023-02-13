@@ -21,9 +21,11 @@ export function SignUp() {
           <UserInput icon={ FiUser } type="text" placeholder="Nome" />
           <UserInput icon={ FiMail } type="email" placeholder="E-mail" />
           <UserInput icon={ FiLock } type="password" placeholder="Senha" />
+
+          <Button type="button" title="Cadastrar" />
         </form>
 
-        <a href="#">
+        <a href="/">
           <AiOutlineArrowLeft />
           Voltar para o login
         </a>
