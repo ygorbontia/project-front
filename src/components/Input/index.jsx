@@ -1,6 +1,6 @@
 import { InputSC } from './style';
 
-export function Input( title, ...rest) {
+export function Input( ...rest ) {
   return (
     <InputSC placeholder={ title } { ...rest } />
   )
