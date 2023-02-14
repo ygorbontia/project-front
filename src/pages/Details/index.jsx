@@ -4,7 +4,7 @@ import { DetailsSC } from './style';
 
 import { Header } from '../../components/Header';
 import { TextButton } from '../../components/TextButton';
-// import { DetailsTags } from '../../components/DetailsTags';
+import { DetailsTag } from '../../components/DetailsTag';
 
 export function Details() {
   return (
@@ -26,15 +26,15 @@ export function Details() {
           </div>
 
           <div>
-            {/* <DetailsTags
+            <DetailsTag
               title="Ficção Científica"
             />
-            <DetailsTags
+            <DetailsTag
               title="Drama"
             />
-            <DetailsTags
+            <DetailsTag
               title="Família"
-            /> */}
+            />
           </div>
 
           <p>
