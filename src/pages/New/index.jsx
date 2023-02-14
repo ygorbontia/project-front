@@ -4,6 +4,7 @@ import { Header } from '../../components/Header';
 import { TextButton } from '../../components/TextButton';
 import { Input } from '../../components/Input';
 import { MovieTag } from '../../components/MovieTag'
+import { Button } from '../../components/Button'
 
 export function New() {
   return (
@@ -37,7 +38,11 @@ export function New() {
               />
             </div>
           </div>
-          
+
+          <div>
+            <Button title="Excluir filme" />
+            <Button title="Salvar alterações" />
+          </div>          
         </form>
       </main>
     </NewSC>
