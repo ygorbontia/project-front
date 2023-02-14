@@ -7,7 +7,7 @@ export const InputSC = styled.input`
   border: none;
   border-radius: 10px;
   padding: 1.9rem 2.4rem;
-
+ 
   font-size: 1.6rem;
   color: ${({ theme }) => theme.light_100};
 
