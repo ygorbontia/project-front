@@ -1,5 +1,7 @@
 import { HeaderSC, ProfileSC } from './style';
 
+import { Link } from 'react-router-dom';
+
 import { Input } from '../Input';
 
 export function Header() {
@@ -12,7 +14,7 @@ export function Header() {
       <ProfileSC>
         <div>
           <strong>Ygor Bontia</strong>
-          <span>Sair</span>
+          <Link>sair</Link>
         </div>
 
         <img src="https://github.com/ygorbontia.png" alt="" />
