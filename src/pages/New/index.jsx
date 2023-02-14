@@ -1,5 +1,45 @@
+import { NewSC } from './style';
+
+import { Header } from '../../components/Header';
+import { TextButton } from '../../components/TextButton';
+import { Input } from '../../components/Input';
+import { MovieTag } from '../../components/MovieTag'
+
 export function New() {
   return (
-    <h1>New</h1>
+    <NewSC>
+      <Header />
+
+      <main>
+        <TextButton title="Voltar" />
+
+        <form>
+          <h1>Novo filme</h1>
+
+          <div>
+            <Input type="text" placeholder="Título" />
+            <Input type="number" placeholder="Sua nota (de 0 a 5)" min="0" max="5" />
+          </div>
+
+          <textarea textarea="Observações"></textarea>
+
+          <div>
+            <h3>Marcadores</h3>
+
+            <div>
+              <MovieTag
+                title="React"
+              />
+
+              <MovieTag
+                isNew
+                placeholder="Novo marcador"
+              />
+            </div>
+          </div>
+          
+        </form>
+      </main>
+    </NewSC>
   )
 }
