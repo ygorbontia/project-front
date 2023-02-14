@@ -4,14 +4,16 @@ import { NotesSC, TagSC } from './style';
 export function Notes({ title, description, rating, tags}) {
   return (
     <NotesSC>
-      <h2>{ title }</h2>
+      <div>
+        <h2>{ title }</h2>
 
-      <div className="rating">
-        <AiFillStar size={ 20 } />
-        <AiFillStar size={ 20 } />
-        <AiFillStar size={ 20 } />
-        <AiFillStar size={ 20 } />
-        <AiOutlineStar size={ 20 } />
+        <div className="rating">
+          <AiFillStar size={ 16 } />
+          <AiFillStar size={ 16 } />
+          <AiFillStar size={ 16 } />
+          <AiFillStar size={ 16 } />
+          <AiOutlineStar size={ 16 } />
+        </div>
       </div>
 
       <p>{ description }</p>
