@@ -1,9 +1,9 @@
-import style from 'styled-components';
+import styled from 'styled-components';
 
 export const HeaderSC = styled.div`
 
 `;
 
-export const ProfileSC = style.div`
+export const ProfileSC = styled.div`
 
 `;

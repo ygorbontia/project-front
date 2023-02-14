@@ -1,5 +1,15 @@
+import { HomeSC } from './style';
+
+import { Header } from '../../components/Header';
+
 export function Home() {
   return (
-    <h1>Home</h1>
+    <HomeSC>
+      <Header />
+
+      <main>
+        <h1>Oi</h1>
+      </main>
+    </HomeSC>
   )
 }

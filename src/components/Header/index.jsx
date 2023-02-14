@@ -7,7 +7,7 @@ export function Header() {
     <HeaderSC>
       <h1>RocketMovies</h1>
 
-      <Input type="search" placeholder="Pesquisar pelo título" />
+      <Input type="text" placeholder="Pesquisar pelo título" />
 
       <ProfileSC>
         <div>
