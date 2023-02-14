@@ -5,7 +5,7 @@ export const ButtonSC = styled.button`
   height: 5.6rem;
   background-color: ${({ theme }) => theme.pink_rgb};
   border-radius: 10px;
-
+ 
   font-weight: 500;
   font-size: 1.6rem;
   color: ${({ theme }) => theme.dark_200};
