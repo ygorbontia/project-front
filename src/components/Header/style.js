@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const HeaderSC = styled.div`
+  grid-area: "header";
+  
   width: 100%;
   height: 11.6rem;
   border-bottom: solid 1px ${({ theme }) => theme.dark_100};
