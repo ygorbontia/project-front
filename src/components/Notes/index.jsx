@@ -1,3 +1,4 @@
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { NotesSC, TagSC } from './style';
 
 export function Notes({ title, description, rating, tags}) {

@@ -1,8 +1,10 @@
-import { AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai'
+import { AiOutlinePlus } from 'react-icons/ai'
 
 import { HomeSC, MovieNotesSC } from './style';
 
 import { Header } from '../../components/Header';
+
+import { Notes } from '../../components/Notes';
 
 export function Home() {
   return (
@@ -21,98 +23,35 @@ export function Home() {
 
         <MovieNotesSC>
           <Notes 
-            title=""
+            title="Interstellar"
             rating="5"
-            description=""
-            tags={[ "Ficção Científica", "Drama, Família" ]}
+            description='Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem que o "fantasma" é uma inteligência desconhecida que está enviando mensagens codificadas através de'
+            tags={[ 
+              { id: 1, name: "Ficção Científica"},
+              { id: 2, name: "Drama"},
+              { id: 3, name: "Família"}
+            ]}
           />
-          <div>
-            <h2>Interstellar</h2>
-
-            <div className="rating">
-              <AiFillStar size={ 20 } />
-              <AiFillStar size={ 20 } />
-              <AiFillStar size={ 20 } />
-              <AiFillStar size={ 20 } />
-              <AiOutlineStar size={ 20 } />
-            </div>
-
-            <p>
-              Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem que o "fantasma" é uma inteligência desconhecida que está enviando mensagens codificadas através de
-            </p>
-
-            <div className="tags">
-              <span>Ficção Científica</span>
-              <span>Drama</span>
-              <span>Família</span>
-            </div>
-          </div>
-          
-          <div>
-            <h2>Interstellar</h2>
-
-            <div className="rating">
-              <AiFillStar size={ 20 } />
-              <AiFillStar size={ 20 } />
-              <AiFillStar size={ 20 } />
-              <AiFillStar size={ 20 } />
-              <AiOutlineStar size={ 20 } />
-            </div>
-
-            <p>
-              Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem que o "fantasma" é uma inteligência desconhecida que está enviando mensagens codificadas através de
-            </p>
-
-            <div className="tags">
-              <span>Ficção Científica</span>
-              <span>Drama</span>
-              <span>Família</span>
-            </div>
-          </div>
-          
-          <div>
-            <h2>Interstellar</h2>
-
-            <div className="rating">
-              <AiFillStar size={ 20 } />
-              <AiFillStar size={ 20 } />
-              <AiFillStar size={ 20 } />
-              <AiFillStar size={ 20 } />
-              <AiOutlineStar size={ 20 } />
-            </div>
-
-            <p>
-              Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem que o "fantasma" é uma inteligência desconhecida que está enviando mensagens codificadas através de
-            </p>
-
-            <div className="tags">
-              <span>Ficção Científica</span>
-              <span>Drama</span>
-              <span>Família</span>
-            </div>
-          </div>
-          
-          <div>
-            <h2>Interstellar</h2>
-
-            <div className="rating">
-              <AiFillStar size={ 20 } />
-              <AiFillStar size={ 20 } />
-              <AiFillStar size={ 20 } />
-              <AiFillStar size={ 20 } />
-              <AiOutlineStar size={ 20 } />
-            </div>
-
-            <p>
-              Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem que o "fantasma" é uma inteligência desconhecida que está enviando mensagens codificadas através de
-            </p>
-
-            <div className="tags">
-              <span>Ficção Científica</span>
-              <span>Drama</span>
-              <span>Família</span>
-            </div>
-          </div>
+          <Notes 
+            title="Interstellar"
+            rating="5"
+            description='Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem que o "fantasma" é uma inteligência desconhecida que está enviando mensagens codificadas através de'
+            tags={[ 
+              { id: 1, name: "Ficção Científica"},
+              { id: 2, name: "Drama"},
+              { id: 3, name: "Família"}
+            ]}
+          />
+          <Notes 
+            title="Interstellar"
+            rating="5"
+            description='Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem que o "fantasma" é uma inteligência desconhecida que está enviando mensagens codificadas através de'
+            tags={[ 
+              { id: 1, name: "Ficção Científica"},
+              { id: 2, name: "Drama"},
+              { id: 3, name: "Família"}
+            ]}
+          />
         </MovieNotesSC>
       </main>
     </HomeSC>
