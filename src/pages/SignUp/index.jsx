@@ -3,8 +3,8 @@ import { FiUser, FiMail, FiLock } from 'react-icons/fi';
 
 import { SignUpSC, FormSC, BackgroundSC } from './style';
 
-import { UserInput } from '../../componentes/UserInput';
-import { Button } from '../../componentes/Button';
+import { UserInput } from '../../components/UserInput';
+import { Button } from '../../components/Button';
 
 export function SignUp() {
   return (
