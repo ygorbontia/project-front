@@ -25,7 +25,7 @@ export function New() {
 
         <textarea placeholder="Observações"></textarea>
 
-        <div>
+        <div className="tags">
           <h3>Marcadores</h3>
 
           <div>
@@ -40,7 +40,7 @@ export function New() {
           </div>
         </div>
 
-        <div>
+        <div className="buttons">
           <Button title="Excluir filme" />
           <Button title="Salvar alterações" />
         </div>          

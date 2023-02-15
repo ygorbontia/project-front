@@ -56,5 +56,45 @@ export const NewSC = styled.div`
         color: ${({ theme }) => theme.light_500};
       }
     }
+
+    .tags {
+      h3 {
+        margin-bottom: 2.4rem;
+
+        font-weight: 400;
+        font-size: 2rem;
+        color: ${({ theme }) => theme.light_400};
+      }
+
+      > div {
+        background-color: ${({ theme }) => theme.black_200};
+        border: none;
+        border-radius: 8px;
+        padding: 1.6rem;
+
+        display: flex;
+        align-items: center;
+        gap: 2.4rem;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+
+      button {
+        border: none;
+        outline: none;
+
+        /* cursor: pointer; */
+      }
+
+      button:nth-child(1) {
+        background-color: ${({ theme }) => theme.black_200};
+
+        color: ${({ theme }) => theme.pink_rgb};
+      }
+    }
   }
 `;
