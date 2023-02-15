@@ -12,7 +12,7 @@ export const HeaderSC = styled.div`
   align-items: center;
   gap: 6.4rem;
 
-  > h1 {
+  > a {
     font-weight: 700;
     font-size: 2.4rem;
     color: ${({ theme }) => theme.pink_rgb};
@@ -29,7 +29,7 @@ export const ProfileSC = styled.div`
     flex-direction: column;
     white-space: nowrap;
     
-    > strong {
+    > strong a {
       font-size: 1.4rem;
       color: ${({ theme }) => theme.light_100};
       text-align: right;
@@ -47,7 +47,7 @@ export const ProfileSC = styled.div`
     }
   }
 
-  > img {
+  > a img {
     width: 6.4rem;
     height: 6.4rem;
     border: solid 1px ${({ theme }) => theme.dark_100};

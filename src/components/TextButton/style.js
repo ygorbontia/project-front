@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-export const TextButtonSC = styled.button`
+import { Link } from 'react-router-dom';
+
+export const TextButtonSC = styled(Link)`
+  width: fit-content;
   background-color: transparent;
   border: none;
 

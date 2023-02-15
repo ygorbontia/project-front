@@ -7,17 +7,21 @@ import { Input } from '../Input';
 export function Header() {
   return (
     <HeaderSC>
-      <h1>RocketMovies</h1>
+      <Link to="/">RocketMovies</Link>
 
       <Input type="text" placeholder="Pesquisar pelo título" />
 
       <ProfileSC>
         <div>
-          <strong>Ygor Bontia</strong>
-          <Link>sair</Link>
+          <strong>
+            <Link to="/profile">Ygor Bontia</Link>
+          </strong>
+          <Link to="/">sair</Link>
         </div>
 
-        <img src="https://github.com/ygorbontia.png" alt="" />
+        <Link to="/profile">
+          <img src="https://github.com/ygorbontia.png" alt="" />
+        </Link>
       </ProfileSC>
     </HeaderSC>
   )

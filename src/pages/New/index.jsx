@@ -12,7 +12,7 @@ export function New() {
       <Header />
 
       <nav>
-        <TextButton title="Voltar" />
+        <TextButton title="Voltar" to={ -1 } />
       </nav>
 
       <form>

@@ -9,7 +9,7 @@ export function Profile() {
   return (
     <ProfileSC>
       <header>
-        <TextButton title="Voltar" />
+        <TextButton title="Voltar" to={ -1 } />
       </header>
 
       <main>

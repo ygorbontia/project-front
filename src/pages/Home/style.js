@@ -25,7 +25,7 @@ export const HomeSC = styled.div`
       color: ${({ theme }) => theme.white};
     }
 
-    button {
+    > a {
       height: 4.8rem;
       background-color: ${({ theme }) => theme.pink_rgb};
       border: none;
