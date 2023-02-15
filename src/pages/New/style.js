@@ -51,6 +51,17 @@ export const NewSC = styled.div`
     div:nth-child(2) {
       display: flex;
       gap: 4rem;
+
+      input[type="number"]::-webkit-outer-spin-button, 
+      input[type="number"]::-webkit-inner-spin-button {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+      }
+
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
     }
 
     textarea {
@@ -100,7 +111,7 @@ export const NewSC = styled.div`
         border: none;
         outline: none;
 
-        /* cursor: pointer; */
+        cursor: pointer;
       }
 
       button:nth-child(1) {
