@@ -43,6 +43,7 @@ export const ProfileSC = styled.div`
     > button {
       background-color: transparent;
       border: none;
+      margin-bottom: 10rem;
   
       cursor: pointer;
   
