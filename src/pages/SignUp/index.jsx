@@ -19,6 +19,10 @@ export function SignUp() {
 
 
   function handleSignUp() {
+    if (!name || !email || !password) {
+      return alert("Por favor, preencha todas as informações.");
+    }
+
     api.post("/users", { name, email, password })
       .then(() => {
         alert("Usuário cadastrado com sucesso.");
