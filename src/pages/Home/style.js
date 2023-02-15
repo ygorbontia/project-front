@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const HomeSC = styled.div`
   width: 100%;
   height: 100vh;
-  padding-bottom: 5.8rem;
+  padding-bottom: 8.5rem;
 
   display: grid;
   grid-template-rows: 11.6rem auto;

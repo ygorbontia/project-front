@@ -38,12 +38,18 @@ export const ProfileSC = styled.div`
       > div:nth-child(5) {
         margin-bottom: 2.4rem;
       }
+
+      button {
+        border: none;
+
+        cursor: pointer;
+      }
     }
     
     > button {
       background-color: transparent;
       border: none;
-      margin-bottom: 10rem;
+      margin-bottom: 8.5rem;
   
       cursor: pointer;
   
