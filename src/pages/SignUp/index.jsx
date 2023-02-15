@@ -5,6 +5,7 @@ import { SignUpSC, FormSC, BackgroundSC } from './style';
 
 import { UserInput } from '../../components/UserInput';
 import { Button } from '../../components/Button';
+import { TextButton } from '../../components/TextButton';
 
 export function SignUp() {
   return (
@@ -12,12 +13,13 @@ export function SignUp() {
       <FormSC>
         <div>
           <h1>RocketMovies</h1>
-          <p>Aplicação para acompanhar tudo que assistir.</p>
 
-          <h2>Crie sua conta</h2>
+          <p>Aplicação para acompanhar tudo que assistir.</p>
         </div>
 
         <form>
+          <h2>Crie sua conta</h2>
+
           <UserInput icon={ FiUser } type="text" placeholder="Nome" />
           <UserInput icon={ FiMail } type="email" placeholder="E-mail" />
           <UserInput icon={ FiLock } type="password" placeholder="Senha" />
@@ -25,10 +27,7 @@ export function SignUp() {
           <Button type="button" title="Cadastrar" />
         </form>
 
-        <a href="/">
-          <AiOutlineArrowLeft />
-          Voltar para o login
-        </a>
+        <TextButton title="Voltar para o login" to={ -1 } />
       </FormSC>
 
       <BackgroundSC />
