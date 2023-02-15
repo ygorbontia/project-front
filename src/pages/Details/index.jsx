@@ -13,7 +13,7 @@ export function Details() {
       <Header />
 
       <nav>
-        <TextButton title="Voltar" />
+        <TextButton title="Voltar" to={ -1 } />
       </nav>
 
       <main>

@@ -22,7 +22,7 @@ export function Home() {
       </div>
 
       <MovieNotesSC>
-        <Notes 
+        <Notes to="/details/1"
           title="Interstellar"
           rating="5"
           description='Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem que o "fantasma" é uma inteligência desconhecida que está enviando mensagens codificadas através de'
@@ -32,7 +32,8 @@ export function Home() {
             { id: 3, name: "Família"}
           ]}
         />
-        <Notes 
+
+        <Notes to="/details/2"
           title="Interstellar"
           rating="5"
           description='Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem que o "fantasma" é uma inteligência desconhecida que está enviando mensagens codificadas através de'
@@ -42,7 +43,8 @@ export function Home() {
             { id: 3, name: "Família"}
           ]}
         />
-        <Notes 
+
+        <Notes to="/details/3"
           title="Interstellar"
           rating="5"
           description='Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem que o "fantasma" é uma inteligência desconhecida que está enviando mensagens codificadas através de'

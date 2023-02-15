@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const NotesSC = styled.div`
+import { Link } from 'react-router-dom';
+
+export const NotesSC = styled(Link)`
   width: 100%;
   height: 22.2rem;
   background-color: ${({ theme }) => theme.pink_rgba};
