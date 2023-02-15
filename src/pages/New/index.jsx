@@ -11,40 +11,40 @@ export function New() {
     <NewSC>
       <Header />
 
-      <main>
+      <nav>
         <TextButton title="Voltar" />
+      </nav>
 
-        <form>
-          <h1>Novo filme</h1>
+      <form>
+        <h1>Novo filme</h1>
+
+        <div>
+          <Input type="text" placeholder="Título" />
+          <Input type="number" placeholder="Sua nota (de 0 a 5)" min="0" max="5" />
+        </div>
+
+        <textarea placeholder="Observações"></textarea>
+
+        <div>
+          <h3>Marcadores</h3>
 
           <div>
-            <Input type="text" placeholder="Título" />
-            <Input type="number" placeholder="Sua nota (de 0 a 5)" min="0" max="5" />
+            <MovieTag
+              title="React"
+            />
+
+            <MovieTag
+              isNew
+              placeholder="Novo marcador"
+            />
           </div>
+        </div>
 
-          <textarea textarea="Observações"></textarea>
-
-          <div>
-            <h3>Marcadores</h3>
-
-            <div>
-              <MovieTag
-                title="React"
-              />
-
-              <MovieTag
-                isNew
-                placeholder="Novo marcador"
-              />
-            </div>
-          </div>
-
-          <div>
-            <Button title="Excluir filme" />
-            <Button title="Salvar alterações" />
-          </div>          
-        </form>
-      </main>
+        <div>
+          <Button title="Excluir filme" />
+          <Button title="Salvar alterações" />
+        </div>          
+      </form>
     </NewSC>
   )
 }
