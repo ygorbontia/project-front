@@ -29,6 +29,19 @@ export const NewSC = styled.div`
     display: grid;
     gap: 4rem;
 
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme.pink_rgb};
+      border-radius: 8px;
+    }
+
     h1 {
       font-weight: 500;
       font-size: 3.6rem;
