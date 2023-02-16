@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useAuth } from '../../hooks/auth';
 
+import avatarPlaceholder from '../../assets/avatar-placeholder.svg';
+
 import { FiCamera, FiUser, FiMail, FiLock } from 'react-icons/fi'
 import { ProfileSC, UserAvatarSC } from './style';
 
@@ -15,6 +17,10 @@ export function Profile() {
   const [email, setEmail] = useState(user.email);
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
+  
+  const avatarURL = user.avatar ? user.avatar : avatarPlaceholder
+  const [avatar, setAvatar] = useState(avatarURL)
+  const [avatarFile, setAvatarFile] = useState(null);
 
   async function handleUpdate() {
     const user = {
@@ -24,7 +30,15 @@ export function Profile() {
       new_password: newPassword
     }
 
-    updateProfile({ user })
+    updateProfile({ user, avatarFile })
+  }
+
+  function handleUpdateAvatar(event) {
+    const file = event.target.files[0];
+    setAvatarFile(file);
+
+    const imagePreview = URL.createObjectURL(file);
+    user.avatar = imagePreview;
   }
 
   return (
@@ -36,11 +50,11 @@ export function Profile() {
       <main>
         <form>
           <UserAvatarSC>
-            <img src="https://github.com/ygorbontia.png" alt="" />
+            <img src={ avatar } alt="" />
 
             <label>
               <FiCamera size={ 20 } />
-              <input type="file" />
+              <input type="file" onChange={ handleUpdateAvatar } />
             </label>
           </UserAvatarSC>
 
