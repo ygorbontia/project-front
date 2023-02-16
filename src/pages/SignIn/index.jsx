@@ -1,12 +1,16 @@
 import { FiMail, FiLock } from 'react-icons/fi';
 import { SignInSC, FormSC, BackgroundSC } from './style';
 
+import { useAuth } from '../../hooks/auth';
+
 import { Link } from 'react-router-dom';
 
 import { UserInput } from '../../components/UserInput';
 import { Button } from '../../components/Button';
 
 export function SignIn() {
+  const data = useAuth();
+
   return (
     <SignInSC>
       <FormSC>
