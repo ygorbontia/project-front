@@ -9,13 +9,23 @@ import { UserInput } from '../../components/UserInput';
 import { Button } from '../../components/Button';
 
 export function Profile() {
-  const { user } = useAuth();
+  const { user, updateProfile } = useAuth();
 
   const [name, setName] = useState(user.name);
   const [email, setEmail] = useState(user.email);
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
 
+  async function handleUpdate() {
+    const user = {
+      name,
+      email,
+      current_password: currentPassword,
+      new_password: newPassword
+    }
+
+    updateProfile({ user })
+  }
 
   return (
     <ProfileSC>
@@ -39,7 +49,7 @@ export function Profile() {
           <UserInput icon={ FiLock } type="password" placeholder="Senha atual" onChange={ event => setCurrentPassword( event.target.value ) } />
           <UserInput icon={ FiLock } type="password" placeholder="Nova senha" onChange={ event => setNewPassword( event.target.value ) } />
 
-          <Button title="Salvar" />
+          <Button type="button" title="Salvar" onClick={ handleUpdate } />
         </form>
         
         <button>
