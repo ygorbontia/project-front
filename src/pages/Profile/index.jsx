@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useAuth } from '../../hooks/auth';
 
+import { api } from '../../services/api';
+
 import avatarPlaceholder from '../../assets/avatar-placeholder.svg';
 
 import { FiCamera, FiUser, FiMail, FiLock } from 'react-icons/fi'
@@ -18,7 +20,7 @@ export function Profile() {
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   
-  const avatarURL = user.avatar ? user.avatar : avatarPlaceholder
+  const avatarURL = user.avatar ? `${ api.defaults.baseURL }/files/${ user.avatar }` : avatarPlaceholder
   const [avatar, setAvatar] = useState(avatarURL)
   const [avatarFile, setAvatarFile] = useState(null);
 
@@ -38,7 +40,7 @@ export function Profile() {
     setAvatarFile(file);
 
     const imagePreview = URL.createObjectURL(file);
-    user.avatar = imagePreview;
+    setAvatar(imagePreview)
   }
 
   return (
