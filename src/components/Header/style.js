@@ -35,7 +35,7 @@ export const ProfileSC = styled.div`
       text-align: right;
     }
 
-    > a {
+    > span {
       width: fit-content;
       align-self: flex-end;
 
