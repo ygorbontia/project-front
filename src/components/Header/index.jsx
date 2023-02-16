@@ -1,10 +1,21 @@
+import { useAuth } from '../../hooks/auth';
+
 import { HeaderSC, ProfileSC } from './style';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { Input } from '../Input';
 
 export function Header() {
+  const { signOut } = useAuth();
+  const navigate = useNavigate();
+
+  function handleSignOut() {
+    signOut();
+
+    navigate("/");
+  }
+
   return (
     <HeaderSC>
       <Link to="/">RocketMovies</Link>
@@ -16,7 +27,7 @@ export function Header() {
           <strong>
             <Link to="/profile">Ygor Bontia</Link>
           </strong>
-          <Link to="/">sair</Link>
+          <span onClick={ handleSignOut }>sair</span>
         </div>
 
         <Link to="/profile">
