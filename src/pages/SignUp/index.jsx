@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { api } from '../../services/api';
 import { useNavigate } from 'react-router-dom';
 
-import { AiOutlineArrowLeft } from 'react-icons/ai';
 import { FiUser, FiMail, FiLock } from 'react-icons/fi';
 
 import { SignUpSC, FormSC, BackgroundSC } from './style';
@@ -29,7 +28,7 @@ export function SignUp() {
         
         navigate("/");
       })
-      .catch( error => {
+      .catch(error => {
         if (error.response) {
           alert(error.response.data.message);
         } else {
