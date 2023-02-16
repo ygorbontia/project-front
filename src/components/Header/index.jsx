@@ -1,5 +1,9 @@
 import { useAuth } from '../../hooks/auth';
 
+import { api } from '../../services/api';
+
+import avatarPlaceholder from '../../assets/avatar-placeholder.svg';
+
 import { HeaderSC, ProfileSC } from './style';
 
 import { Link, useNavigate } from 'react-router-dom';
@@ -7,8 +11,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Input } from '../Input';
 
 export function Header() {
-  const { signOut } = useAuth();
+  const { signOut, user } = useAuth();
   const navigate = useNavigate();
+
+  const avatar = user.avatar ? `${ api.defaults.baseURL }/files/${ user.avatar }` : avatarPlaceholder;
 
   function handleSignOut() {
     signOut();
@@ -25,13 +31,13 @@ export function Header() {
       <ProfileSC>
         <div>
           <strong>
-            <Link to="/profile">Ygor Bontia</Link>
+            <Link to="/profile">{ user.name }</Link>
           </strong>
           <span onClick={ handleSignOut }>sair</span>
         </div>
 
         <Link to="/profile">
-          <img src="https://github.com/ygorbontia.png" alt="" />
+          <img src={ avatar } alt="" />
         </Link>
       </ProfileSC>
     </HeaderSC>
