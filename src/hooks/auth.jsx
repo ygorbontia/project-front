@@ -5,7 +5,7 @@ const AuthContext = createContext({});
 function AuthProvider({ children }) {
   return (
     <AuthContext.Provider value={{}}>
-      {/* { children } */}
+      { children }
     </AuthContext.Provider>
   )
 }
