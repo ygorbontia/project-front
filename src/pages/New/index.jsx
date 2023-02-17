@@ -90,6 +90,14 @@ export function New() {
           <h3>Marcadores</h3>
 
           <div>
+            <MovieTag
+              isNew
+              placeholder="Novo marcador"
+              value={ newTag }
+              onChange={ event => setNewTag( event.target.value ) }
+              onClick={ handleAddTag }
+            />
+
             {
               tags.map((tag,index) => (
                 <MovieTag 
@@ -99,14 +107,6 @@ export function New() {
                 />  
               ))
             }
-
-            <MovieTag
-              isNew
-              placeholder="Novo marcador"
-              value={ newTag }
-              onChange={ event => setNewTag( event.target.value ) }
-              onClick={ handleAddTag }
-            />
           </div>
         </div>
 
