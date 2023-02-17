@@ -58,7 +58,7 @@ export function Details() {
               <div className="author">
                 <img src={ avatar } alt="" />
 
-                {/* <p>Por { user.name }</p> */}
+                <p>Por { user.name }</p>
               </div>
 
               <div className="time">
