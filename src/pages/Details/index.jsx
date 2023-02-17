@@ -25,7 +25,6 @@ export function Details() {
     async function fetchMovie() {
       const response = await api.get(`/notes/${ id }`);
 
-      console.log(response.data)
       setMovie(response.data);
     }
 
