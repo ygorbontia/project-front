@@ -13,9 +13,13 @@ export function New() {
   const [newTag, setNewTag] = useState("");
 
   function handleAddTag() {
-    setTags(prevState => [...prevtState, newTag]);
+    setTags(prevState => [...prevState, newTag]);
 
     setNewTag("");
+  }
+
+  function handleRemoveTag(deleted) {
+    setTags(prevState => prevState.filter(tag => tag !== deleted));
   }
 
   return (
@@ -40,6 +44,16 @@ export function New() {
           <h3>Marcadores</h3>
 
           <div>
+            {
+              tags.map((tag,index) => (
+                <MovieTag 
+                  key={ String( index )} 
+                  title={ tag }
+                  onClick={ () => handleRemoveTag(tag) }
+                />  
+              ))
+            }
+
             <MovieTag
               isNew
               placeholder="Novo marcador"
