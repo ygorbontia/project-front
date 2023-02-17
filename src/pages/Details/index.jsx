@@ -25,6 +25,7 @@ export function Details() {
     async function fetchMovie() {
       const response = await api.get(`/notes/${ id }`);
 
+      console.log(response.data)
       setMovie(response.data);
     }
 
@@ -69,17 +70,19 @@ export function Details() {
             </div>
           </div>
 
-          <div className="tags">
-            <DetailsTag
-              title="Ficção Científica"
-            />
-            <DetailsTag
-              title="Drama"
-            />
-            <DetailsTag
-              title="Família"
-            />
-          </div>
+          {
+            movie.tags &&
+            <div className="tags">
+              {
+                movie.tags.map(tag => (
+                  <DetailsTag
+                    key={ String(tag.id) }
+                    title={ tag.name }
+                  />
+                ))
+              }
+            </div>
+          }
 
           <div className="description">
             <p>{ movie.description }</p>
