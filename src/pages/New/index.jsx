@@ -32,6 +32,10 @@ export function New() {
 
   async function handleCreateNote() {
     try {
+      if (title == "" || rating == "") {
+        return alert("Os campos de título e de nota são obrigatório.");
+      }
+
       if (newTag) {
         return alert("Você possui marcadores que não foram adicionados, remova ou adicione o item antes de criar a nota");
       }
