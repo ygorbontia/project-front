@@ -20,7 +20,7 @@ export function Home() {
 
       setNotes(response.data.notes);
     }
-// 
+
     fetchNotes();
   }, [])
 
