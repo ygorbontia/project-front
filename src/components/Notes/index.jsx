@@ -16,10 +16,13 @@ export function Notes({ title, description, rating, tags, ...rest }) {
         </div>
       </div>
 
-      <p>{ description }</p>
+      {
+        description &&
+        <p>{ description }</p>
+      }
 
       {
-        tags &&
+        tags.length > 0 &&
         <footer>
           {
             tags.map(tag => <TagSC key={ tag.id }>{ tag.name }</TagSC>)
