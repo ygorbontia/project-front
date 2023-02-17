@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { api } from '../../services/api';
 import { useParams } from 'react-router-dom';
 import { useAuth } from '../../hooks/auth';
+import { useNavigate } from 'react-router-dom';
 
 import avatarPlaceholder from '../../assets/avatar-placeholder.svg';
 
@@ -18,8 +19,27 @@ export function Details() {
   const [movie, setMovie] = useState({});
   const { id } = useParams();
   const { user } = useAuth();
+  const navigate = useNavigate();
 
   const avatar = user.avatar ? `${ api.defaults.baseURL }/files/${ user.avatar }` : avatarPlaceholder;
+
+  async function handleDeleteNote() {
+    const confirmDelete = confirm("Tem certeza que deseja remover essa nota?");
+    if (confirmDelete) {
+      try {
+        await api.delete(`/notes/${ id }`);
+      
+        alert("A nota foi excluída com sucesso.");
+        navigate("/");
+      } catch (error) {
+        if (error.response) {
+          alert(error.response.data.message);
+        } else {
+          alert("Não foi possível excluir essa nota.");
+        }
+      }
+    }
+  }
 
   useEffect(() => {
     async function fetchMovie() {
@@ -37,6 +57,10 @@ export function Details() {
 
       <nav>
         <TextButton title="Voltar" to={ -1 } />
+
+        <button onClick={ handleDeleteNote }>
+          Excluir nota
+        </button>
       </nav>
 
       <main>

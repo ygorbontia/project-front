@@ -17,6 +17,20 @@ export const DetailsSC = styled.div`
 
     width: 113.7rem;
     margin: 4rem auto 2.4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    > button:nth-child(2) {
+      background: none;
+      border: none;
+
+      cursor: pointer;
+
+      font-size: 1.6rem;
+      color: ${({ theme }) => theme.pink_rgb};
+    }
   }
 
   > main {
