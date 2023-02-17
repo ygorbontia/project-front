@@ -34,7 +34,7 @@ export function Profile() {
 
     const userUpdated = Object.assign(user, updated);
 
-    updateProfile({ userUpdated, avatarFile })
+    updateProfile({ user: userUpdated, avatarFile })
   }
 
   function handleUpdateAvatar(event) {
