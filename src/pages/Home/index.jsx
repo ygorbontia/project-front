@@ -12,7 +12,6 @@ import { Notes } from '../../components/Notes';
 
 export function Home() {
   const [notes, setNotes] = useState([]);
-  const [search, setSearch] = useState("");
 
   useEffect(() => {
     async function fetchNotes() {
@@ -23,9 +22,6 @@ export function Home() {
 
     fetchNotes();
   }, [])
-
-  useEffect(() => {
-  }, [search])
 
   return (
     <HomeSC>
