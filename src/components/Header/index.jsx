@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { useAuth } from '../../hooks/auth';
 
 import { api } from '../../services/api';
@@ -12,8 +13,10 @@ import { Input } from '../Input';
 
 export function Header() {
   const { signOut, user } = useAuth();
-  const navigate = useNavigate();
+  const [search, setSearch] = useState("");
+  const [notes, setNotes] = useState([]);
 
+  const navigate = useNavigate();
   const avatar = user.avatar ? `${ api.defaults.baseURL }/files/${ user.avatar }` : avatarPlaceholder;
 
   function handleSignOut() {
@@ -22,11 +25,31 @@ export function Header() {
     navigate("/");
   }
 
+  async function searchNotes() {
+    if (api.defaults.baseURL !== 'http://localhost:5173/') {
+      navigate("/");
+    }
+
+    const response = await api.get(`/notes?title=${ search }`)
+    
+    console.log(response.data);
+    setNotes(response.data);
+  }
+
   return (
     <HeaderSC>
       <Link to="/">RocketMovies</Link>
 
-      <Input type="text" placeholder="Pesquisar pelo título" />
+      <Input 
+        type="text" 
+        placeholder="Pesquisar pelo título" 
+        onChange={ event => setSearch( event.target.value ) } 
+        onKeyDown={ event => {
+          if (event.key == 'Enter') {
+            searchNotes();
+          }
+        }}
+      />
 
       <ProfileSC>
         <div>

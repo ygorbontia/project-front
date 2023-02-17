@@ -1,3 +1,6 @@
+import { useState, useEffect } from 'react';
+import { api } from '../../services/api';
+
 import { AiOutlinePlus } from 'react-icons/ai'
 
 import { Link } from 'react-router-dom';
@@ -8,6 +11,22 @@ import { Header } from '../../components/Header';
 import { Notes } from '../../components/Notes';
 
 export function Home() {
+  const [notes, setNotes] = useState([]);
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    async function fetchNotes() {
+      const response = await api.get("/notes");
+
+      setNotes(response.data.notes);
+    }
+// 
+    fetchNotes();
+  }, [])
+
+  useEffect(() => {
+  }, [search])
+
   return (
     <HomeSC>
       <Header />
@@ -21,40 +40,22 @@ export function Home() {
         </Link>
       </div>
 
-      <MovieNotesSC>
-        <Notes to="/details/1"
-          title="Interstellar"
-          rating="5"
-          description='Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem que o "fantasma" é uma inteligência desconhecida que está enviando mensagens codificadas através de'
-          tags={[ 
-            { id: 1, name: "Ficção Científica"},
-            { id: 2, name: "Drama"},
-            { id: 3, name: "Família"}
-          ]}
-        />
-
-        <Notes to="/details/2"
-          title="Interstellar"
-          rating="5"
-          description='Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem que o "fantasma" é uma inteligência desconhecida que está enviando mensagens codificadas através de'
-          tags={[ 
-            { id: 1, name: "Ficção Científica"},
-            { id: 2, name: "Drama"},
-            { id: 3, name: "Família"}
-          ]}
-        />
-
-        <Notes to="/details/3"
-          title="Interstellar"
-          rating="5"
-          description='Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem que o "fantasma" é uma inteligência desconhecida que está enviando mensagens codificadas através de'
-          tags={[ 
-            { id: 1, name: "Ficção Científica"},
-            { id: 2, name: "Drama"},
-            { id: 3, name: "Família"}
-          ]}
-        />
-      </MovieNotesSC>
+      { 
+        notes &&
+        <MovieNotesSC>
+          {
+            notes.map(note => (
+              <Notes to={`/details/${ note.id }`}
+                key={ String(note.id) }
+                title={ note.title }
+                rating={ note.rating }
+                description={ note.description }
+                tags={ note.tags }
+              />
+            ))
+          }
+        </MovieNotesSC>
+      }
     </HomeSC>
   )
 }
