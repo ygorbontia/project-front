@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { NewSC } from './style';
 
 import { Header } from '../../components/Header';
@@ -7,6 +9,15 @@ import { MovieTag } from '../../components/MovieTag'
 import { Button } from '../../components/Button'
 
 export function New() {
+  const [tags, setTags] = useState([]);
+  const [newTag, setNewTag] = useState("");
+
+  function handleAddTag() {
+    setTags(prevState => [...prevtState, newTag]);
+
+    setNewTag("");
+  }
+
   return (
     <NewSC>
       <Header />
@@ -30,12 +41,11 @@ export function New() {
 
           <div>
             <MovieTag
-              title="React"
-            />
-
-            <MovieTag
               isNew
               placeholder="Novo marcador"
+              value={ newTag }
+              onChange={ event => setNewTag( event.target.value ) }
+              onClick={ handleAddTag }
             />
           </div>
         </div>
