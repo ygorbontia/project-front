@@ -1,5 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
+import { useSearchMovies } from '../hooks/searchMovies';
+
 import { Home } from '../pages/Home';
 import { Profile } from '../pages/Profile';
 import { New } from '../pages/New';

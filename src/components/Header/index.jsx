@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useAuth } from '../../hooks/auth';
+import { useSearchMovies } from '../../hooks/searchMovies';
 
 import { api } from '../../services/api';
 
@@ -14,7 +15,7 @@ import { Input } from '../Input';
 export function Header() {
   const { signOut, user } = useAuth();
   const [search, setSearch] = useState("");
-  const [notes, setNotes] = useState([]);
+  const { handleTitle } = useSearchMovies();
 
   const navigate = useNavigate();
   const avatar = user.avatar ? `${ api.defaults.baseURL }/files/${ user.avatar }` : avatarPlaceholder;
@@ -25,15 +26,12 @@ export function Header() {
     navigate("/");
   }
 
-  async function searchNotes() {
+  function searchNotes() {
+    handleTitle(search);
+
     if (api.defaults.baseURL !== 'http://localhost:5173/') {
       navigate("/");
     }
-
-    const response = await api.get(`/notes?title=${ search }`)
-    
-    console.log(response.data);
-    setNotes(response.data);
   }
 
   return (
