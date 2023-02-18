@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 
 import avatarPlaceholder from '../../assets/avatar-placeholder.svg';
 
-import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { CiClock2 } from 'react-icons/ci';
 
 import { DetailsSC } from './style';
@@ -14,6 +13,7 @@ import { DetailsSC } from './style';
 import { Header } from '../../components/Header';
 import { TextButton } from '../../components/TextButton';
 import { DetailsTag } from '../../components/DetailsTag';
+import { RatingStars } from '../../components/RatingStars';
 
 export function Details() {
   const [movie, setMovie] = useState({});
@@ -69,13 +69,7 @@ export function Details() {
             <div className="movie">
               <h1>{ movie.title }</h1>
 
-              <div className="rating">
-                <AiFillStar size={ 20 } />
-                <AiFillStar size={ 20 } />
-                <AiFillStar size={ 20 } />
-                <AiFillStar size={ 20 } />
-                <AiOutlineStar size={ 20 } />
-              </div>
+              <RatingStars rating={ movie.rating } />
             </div>
 
             <div className="author-and-time">
