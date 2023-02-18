@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from '../../hooks/auth';
+import { useNavigate } from 'react-router-dom';
 
 import { api } from '../../services/api';
 
@@ -13,7 +14,8 @@ import { UserInput } from '../../components/UserInput';
 import { Button } from '../../components/Button';
 
 export function Profile() {
-  const { user, updateProfile } = useAuth();
+  const { user, updateProfile, deleteProfile } = useAuth();
+  const navigate = useNavigate();
 
   const [name, setName] = useState(user.name);
   const [email, setEmail] = useState(user.email);
@@ -45,6 +47,16 @@ export function Profile() {
     setAvatar(imagePreview)
   }
 
+  function handleDelete() {
+    const confirmDelete = confirm("Tem certeza que deseja excluir sua conta?");
+    if (confirmDelete) {
+      deleteProfile(user.id);
+
+      alert("Sua conta foi excluída com sucesso");
+      navigate("/");
+    }
+  }
+
   return (
     <ProfileSC>
       <header>
@@ -70,7 +82,7 @@ export function Profile() {
           <Button type="button" title="Salvar" onClick={ handleUpdate } />
         </form>
         
-        <button>
+        <button type="button" onClick={ handleDelete }>
           Excluir conta
         </button>
       </main>

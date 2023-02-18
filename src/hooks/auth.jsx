@@ -60,6 +60,23 @@ function AuthProvider({ children }) {
     }
   }
 
+  async function deleteProfile(id) {
+    try {
+      await api.delete("/users", id)
+
+      localStorage.removeItem("@rocketmovies:user");
+      localStorage.removeItem("@rocketmovies:token");
+
+      setData({});
+    } catch (error) {
+      if (error.response) {
+        alert(error.response.data.message);
+      } else {
+        alert("Não foi possível efetuar a exclusão da conta.");
+      }
+    }
+  }
+
   useEffect(() => {
     const user = localStorage.getItem("@rocketmovies:user");
     const token = localStorage.getItem("@rocketmovies:token");
@@ -75,7 +92,7 @@ function AuthProvider({ children }) {
   }, [])
 
   return (
-    <AuthContext.Provider value={{ signIn, user: data.user, signOut, updateProfile }}>
+    <AuthContext.Provider value={{ signIn, user: data.user, signOut, updateProfile, deleteProfile }}>
       { children }
     </AuthContext.Provider>
   )
